@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getExchangeRequests, respondToRequest } from "../api";
+import { ThreeDots } from "react-loader-spinner";
 
 const ExchangeRequests = () => {
   const [requests, setRequests] = useState([]);
@@ -33,7 +34,18 @@ const ExchangeRequests = () => {
 
   if (loading) {
     return (
-      <p className="text-center text-xl font-semibold">Loading requests...</p>
+      <p className="flex justify-center items-center h-screen">
+        <ThreeDots
+          visible={true}
+          height="80"
+          width="80"
+          color="#3C82F6"
+          radius="9"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </p>
     );
   }
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getUserBooks, deleteBook } from "../api";
+import { ThreeDots } from "react-loader-spinner";
 
 const MyBooks = () => {
   const [books, setBooks] = useState([]);
@@ -35,7 +36,18 @@ const MyBooks = () => {
 
   if (loading) {
     return (
-      <p className="text-center text-xl font-semibold">Loading your books...</p>
+      <p className="flex justify-center items-center h-screen">
+        <ThreeDots
+          visible={true}
+          height="80"
+          width="80"
+          color="#3C82F6"
+          radius="9"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </p>
     );
   }
 

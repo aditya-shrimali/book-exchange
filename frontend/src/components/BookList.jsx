@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getAllBooks, requestExchange } from "../api";
+import { ThreeDots } from "react-loader-spinner";
 
 const BookList = () => {
   const [books, setBooks] = useState([]);
@@ -43,7 +44,18 @@ const BookList = () => {
 
   if (loading) {
     return (
-      <p className="text-center text-xl font-semibold">Loading books...</p>
+      <p className="flex justify-center items-center h-screen">
+        <ThreeDots
+          visible={true}
+          height="80"
+          width="80"
+          color="#3C82F6"
+          radius="9"
+          ariaLabel="three-dots-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+        />
+      </p>
     );
   }
 
@@ -84,7 +96,18 @@ const BookList = () => {
         </select>
       </div>
       {loading ? (
-        <p className="text-center text-xl font-semibold">Loading books...</p>
+        <p className="flex justify-center items-center h-screen">
+          <ThreeDots
+            visible={true}
+            height="80"
+            width="80"
+            color="#3C82F6"
+            radius="9"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        </p>
       ) : filteredBooks.length > 0 ? (
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredBooks.map((book) => (

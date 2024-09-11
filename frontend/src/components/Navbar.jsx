@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center p-4 text-white">
         {/* Left: Logo or App Name */}
         <div className="text-2xl font-bold">
-          <Link to="/">Book Exchange</Link>
+          <Link to="/books">Book Exchange</Link>
         </div>
 
         {/* Center: Navigation Links */}
