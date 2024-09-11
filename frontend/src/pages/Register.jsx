@@ -18,7 +18,7 @@ const Register = () => {
         .map((pref) => pref.trim())
         .filter((pref) => pref !== "");
       const response = await axios.post(
-        "http://localhost:3000/api/auth/register",
+        "https://book-exchange-backend-zeta.vercel.app/api/auth/register",
         { name, email, password, preferences: preferencesArray }
       );
       localStorage.setItem("token", response.data.token);

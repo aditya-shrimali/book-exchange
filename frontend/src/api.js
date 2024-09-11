@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api"; // Your backend server URL
+// const API_URL = "http://localhost:3000/api"; // Your backend server URL
+const API_URL = "https://book-exchange-backend-zeta.vercel.app/api";
 
 // Get all books
 export const getAllBooks = async () => {
